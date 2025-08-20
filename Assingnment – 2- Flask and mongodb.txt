@@ -1,8 +1,6 @@
 
 Assignment 1   Linux Basics
 
-
-
 1Q) Creating and Renaming Files/Directories
 Create a directory named test_dir using mkdir.
 Inside test_dir, create an empty file called example.txt.
@@ -150,5 +148,6 @@ project/
 │── templates/
 │   ├── form.html
 │   └── success.html
+
 
 
