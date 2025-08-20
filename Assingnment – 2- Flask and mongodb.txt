@@ -1,0 +1,38 @@
+Assingnment – 2			Flask and mongodb
+
+1Q). Create a Flask application with an /api route. When this route is accessed, it should return a JSON list. The data should be stored in a backend file, read from it, and sent as a response.
+
+Solution:
+from flask import Flask, jsonify
+import json
+
+app = Flask(__name__)
+
+# API route
+@app.route('/api', methods=['GET'])
+def get_data():
+    try:
+        # Read data from backend file
+        with open("data.json", "r") as file:
+            data = json.load(file)
+        return jsonify(data), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+
+2Q). Create a form on the frontend that, when submitted, inserts data into MongoDB Atlas. Upon successful submission, the user should be redirected to another page displaying the message "Data submitted successfully". If there's an error during submission, display the error on the same page without redirection.
+Project Structure:
+
+project/
+│── app.py
+│── templates/
+│   ├── form.html
+│   └── success.html
+
